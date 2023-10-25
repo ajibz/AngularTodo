@@ -1,0 +1,7 @@
+<div class="applistmainDiv" *ngFor="let todoData of todoReceiver">
+    <input type="checkbox"  (click)="triggerCompleted($event, todoData)" [checked]="todoData.isCompleted">
+    <p>{{todoData.item}}</p>
+    <input type="checkbox" #active (click)="triggerActive(active, todoData)" [checked]="todoData.isActive">
+</div>
+
+

@@ -1,0 +1,73 @@
+.mainDiv{
+    background-color: black;
+    height: 100vh;
+    /*background-image: url("src/assets/bg-desktop-dark.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: contain;*/
+}
+
+img{
+    width: 100%;
+    height: 30%;
+    margin-top: 15%;
+}
+
+.todoDiv{
+position: absolute;
+top: 230px;
+left: 35%;
+z-index: 1;
+width: 35%;
+height: 180px;
+}
+
+.imageDiv{
+    position: relative;
+    color: white;
+}
+
+input{
+background-color: rgb(40, 39, 39);
+width: 95%;
+height: 30%;
+border-radius: 7px;
+color: white;
+font-size: larger;
+}
+
+h2{
+    width: 90%;
+    color: white;
+}
+
+
+.linksDiv{
+    position: absolute;
+    left: 35%;
+    width: 35%;
+    top: 469px;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    font-size: small;
+}
+
+.linksinnerdiv{
+    width: 40%;
+    background-color: brown;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.applistDiv{
+    position: absolute;
+    left: 35%;
+    width: 35%;
+    background-color: yellow;
+}
+
+
+

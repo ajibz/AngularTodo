@@ -1,0 +1,16 @@
+{
+  "todo": [
+    {
+      "item": "Brush my teeth",
+      "isCompleted": true,
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "item": "Take over Nigeria from Jagaban",
+      "isCompleted": true,
+      "isActive": true,
+      "id": 2
+    }
+  ]
+}

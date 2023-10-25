@@ -1,0 +1,8 @@
+.applistmainDiv{
+    background-color: chartreuse;
+    display: flex;
+}
+
+p{
+  margin-left: 40px;
+}
