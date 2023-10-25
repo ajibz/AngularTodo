@@ -27,7 +27,6 @@ export class AppComponent {
 
   todoReceiver: TodoModel[] = [];
 
-  ids: number[] = [];
 
  
 
@@ -49,20 +48,33 @@ export class AppComponent {
   }
 
   clearCompleted(){
-   let observable = this.utility.subject
+  //  let observable = this.utility.subject
 
-   observable.subscribe((data)=>{
-    console.log(data)
-    this.todoReceiver = data
-   })
+  //  observable.subscribe((data)=>{
+  //   console.log('subscribe',data)
+  //   this.todoReceiver = data
+  //  })
+  this.httpService.getAllTodos().pipe(map((data)=>data.filter((data)=>data.isCompleted === true))).subscribe((data)=>{
+    const ids: number[] = [];
+       this.todoReceiver = data
+       this.todoReceiver.forEach(todo => {
+        ids.push(Number(todo.id))
+       });
+       console.log(ids)
+       this.httpService.deleteTodo(ids).forEach((data)=>{
+        data.subscribe((data:TodoModel)=>{
 
+          console.log(data)
+         })
+       })
+  })
     
-    /* this.todoReceiver.forEach(todo => {
-      this.ids.push(Number(todo.id))
-     });
-     console.log(this.ids)
+    //  this.todoReceiver.forEach(todo => {
+    //   this.ids.push(Number(todo.id))
+    //  });
+    //  console.log(this.ids)
 
-    this.httpService.deleteTodo(this.ids) */
+    // this.httpService.deleteTodo(this.ids) 
 
   }
 

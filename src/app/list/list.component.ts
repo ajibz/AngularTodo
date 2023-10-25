@@ -19,7 +19,9 @@ export class ListComponent implements OnInit {
 ngOnInit(): void {
     this.httpService.getAllTodos().subscribe((data)=> (
      this.todoReceiver = data
+    
     ))
+    
 }
 
 
@@ -27,6 +29,7 @@ triggerCompleted(completed:Event, todoData:TodoModel){
   const payLoad:TodoModel = {item:todoData.item, isCompleted:(completed.target as HTMLInputElement).checked, isActive:todoData.isActive}
   this.httpService.updateTodo(payLoad,todoData.id!).subscribe((data)=> {
     console.log(data)
+   
   })
 }
 

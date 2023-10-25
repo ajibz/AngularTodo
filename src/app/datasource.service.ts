@@ -32,12 +32,22 @@ export class DatasourceService {
   }
 
   deleteTodo(ids:number[]){
-    const options = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-      body: ids
-    };
+    // const options = {
+    //   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    //   body: ids
+    // };
 
-    return this.http.delete<TodoModel>(`${this.baseUrl}todo`, options)
+    let ll:Observable<TodoModel>[] = []
+
+    for(let i=0;i<ids.length;i++){
+      if(i <= ids.length){
+        console.log('DeleteId',ids[i])
+         ll.push(this.http.delete<TodoModel>(`${this.baseUrl}todo/${ids[i]}`,{headers:{'content-type':'aplication/json'}}))
+         console.log(ll)
+      }
+    }
+    return ll
+    //return this.http.delete<TodoModel>(`${this.baseUrl}todo`, options)
   }
 
   /*getCompletedTodos(){

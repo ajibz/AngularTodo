@@ -12,8 +12,9 @@ export class UtilityService {
  subject = new Subject<TodoModel[]>
 subscribeTodo = this.subject.asObservable()
 
-  publishCompletedTodo(todos:TodoModel[]){
-    console.log(todos)
+  publishCompletedTodo(todos:TodoModel[]):TodoModel[]{
+  
     this.subject.next(todos)
+    return todos
   }
 }
