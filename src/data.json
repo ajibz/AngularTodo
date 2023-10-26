@@ -11,6 +11,12 @@
       "isCompleted": false,
       "isActive": false,
       "id": 5
+    },
+    {
+      "item": "Alexander",
+      "isCompleted": true,
+      "isActive": false,
+      "id": 6
     }
   ]
 }
