@@ -8,6 +8,7 @@ const routes: Routes = [{path:"", component:ListComponent},
                         {path:"all", component:ListComponent},
                         {path:"active", component:ActiveComponent},
                         {path:"completed", component:CompletedComponent},
+                        {path:"completed/:completed", component:CompletedComponent},
                         {path:"clear", component:CompletedComponent,outlet:"anotherlink"}
                         ];
 

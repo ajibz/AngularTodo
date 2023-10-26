@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { TodoModel } from './todoModel';
 import { Observable, filter, map } from 'rxjs';
 import { UtilityService } from './utility.service';
+import { CompletedComponent } from './completed/completed.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ export class AppComponent {
   constructor(private httpService:DatasourceService, private router:Router, private utility:UtilityService){}
 
   @ViewChild("applist") applist!: ListComponent
+  @ViewChild(CompletedComponent) appCompleted!: CompletedComponent
 
 
   title = 'TODOAPP';
@@ -26,11 +28,6 @@ export class AppComponent {
   todoEntry: string[] = [];
 
   todoReceiver: TodoModel[] = [];
-
-
- 
-
-
 
   
 
@@ -67,6 +64,9 @@ export class AppComponent {
           console.log(data)
          })
        })
+       const url = this.router.url === "/all" ? "/all" : this.router.url === "/active" ? "/active" : this.router.url === "/completed" ? "/completed/true" : "/"
+
+       this.router.navigateByUrl(url);
   })
     
     //  this.todoReceiver.forEach(todo => {

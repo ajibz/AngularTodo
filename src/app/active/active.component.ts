@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DatasourceService } from '../datasource.service';
 import { TodoModel } from '../todoModel';
 import { filter } from 'rxjs/operators';
@@ -12,6 +12,7 @@ export class ActiveComponent {
 
   constructor(private httpService:DatasourceService){
   }
+
 
 
   todoReceiver: TodoModel[] = [];
