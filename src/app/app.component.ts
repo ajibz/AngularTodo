@@ -45,12 +45,7 @@ export class AppComponent {
   }
 
   clearCompleted(){
-  //  let observable = this.utility.subject
-
-  //  observable.subscribe((data)=>{
-  //   console.log('subscribe',data)
-  //   this.todoReceiver = data
-  //  })
+ 
   this.httpService.getAllTodos().pipe(map((data)=>data.filter((data)=>data.isCompleted === true))).subscribe((data)=>{
     const ids: number[] = [];
        this.todoReceiver = data
@@ -64,8 +59,8 @@ export class AppComponent {
           console.log(data)
          })
        })
-       const url = this.router.url === "/all" ? "/all" : this.router.url === "/active" ? "/active" : this.router.url === "/completed" ? "/completed/true" : "/"
-
+       const url = this.router.url === "/all" ? "/all/true" : this.router.url === "/all/true" ? "/all": this.router.url === "/active" ? "/active/true" : this.router.url === "/active/true" ? "/active": this.router.url === "/completed" ? "/completed/true" : this.router.url === "/completed/true"  ? "/completed" : "/"
+       console.log(url)
        this.router.navigateByUrl(url);
   })
     

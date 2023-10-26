@@ -1,16 +1,10 @@
 {
   "todo": [
     {
-      "item": "wow",
+      "item": "abiodun",
       "isCompleted": false,
       "isActive": true,
-      "id": 8
-    },
-    {
-      "item": "Alexander",
-      "isCompleted": true,
-      "isActive": false,
-      "id": 9
+      "id": 10
     }
   ]
 }

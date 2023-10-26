@@ -14,18 +14,13 @@ import { ActivatedRoute } from '@angular/router';
 export class CompletedComponent implements DoCheck{
   
   constructor(private httpService:DatasourceService, private utility:UtilityService, private activatedRoute:ActivatedRoute){
-    this.activatedRoute.params.subscribe((data)=> 
-    this.completedPath = data["completed"])
-  }
+
+   }
   ngDoCheck(): void {
-    this.httpService.getAllTodos().pipe(map((data)=> data.filter(todoModel => todoModel.isCompleted === true))).subscribe((data)=> (
-      this.todoReceiver = data
-    ))
-    // console.log('About to publish',this.todoReceiver)
-    // this.utility.publishCompletedTodo(this.todoReceiver)
+ 
   }
 
-  completedPath: string = ""
+
   
   todoReceiver: TodoModel[] = [];
 
