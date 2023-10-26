@@ -56,11 +56,17 @@ export class AppComponent {
        this.httpService.deleteTodo(ids).forEach((data)=>{
         data.subscribe((data:TodoModel)=>{
 
-          console.log(data)
          })
        })
-       const url = this.router.url === "/all" ? "/all/true" : this.router.url === "/all/true" ? "/all": this.router.url === "/active" ? "/active/true" : this.router.url === "/active/true" ? "/active": this.router.url === "/completed" ? "/completed/true" : this.router.url === "/completed/true"  ? "/completed" :  this.router.url ==="/" ? "/all" : "/"
-       console.log(url)
+       const url = this.router.url === "/all" ? "/all/true" 
+                 : this.router.url === "/all/true" ? "/all"
+                 : this.router.url === "/active" ? "/active/true" 
+                 : this.router.url === "/active/true" ? "/active"
+                 : this.router.url === "/completed" ? "/completed/true" 
+                 : this.router.url === "/completed/true"  ? "/completed" 
+                 :  this.router.url ==="/" ? "/all" : "/"
+
+     
        this.router.navigateByUrl(url);
   })
     
