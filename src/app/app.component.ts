@@ -59,7 +59,7 @@ export class AppComponent {
           console.log(data)
          })
        })
-       const url = this.router.url === "/all" ? "/all/true" : this.router.url === "/all/true" ? "/all": this.router.url === "/active" ? "/active/true" : this.router.url === "/active/true" ? "/active": this.router.url === "/completed" ? "/completed/true" : this.router.url === "/completed/true"  ? "/completed" : "/"
+       const url = this.router.url === "/all" ? "/all/true" : this.router.url === "/all/true" ? "/all": this.router.url === "/active" ? "/active/true" : this.router.url === "/active/true" ? "/active": this.router.url === "/completed" ? "/completed/true" : this.router.url === "/completed/true"  ? "/completed" :  this.router.url ==="/" ? "/all" : "/"
        console.log(url)
        this.router.navigateByUrl(url);
   })
